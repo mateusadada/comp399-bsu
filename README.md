@@ -21,7 +21,7 @@
 
 ## 🚀 Starting
 
-This project was developed as part of the 3D Animation course, focusing on practical modeling exercises and understanding the mathematical and physical concepts behind transformations in 3D environments. The main goal is to provide a solid foundation for understanding object movement and manipulation within the Unity game engine.
+These exercises and final project (in developing) were developed as part of the 3D Animation course, focusing on practical modeling exercises and understanding the mathematical and physical concepts behind transformations in 3D environments. The main goal is to provide a solid foundation for understanding object movement and manipulation within the Unity game engine.
 
 ## 📚 Features
 

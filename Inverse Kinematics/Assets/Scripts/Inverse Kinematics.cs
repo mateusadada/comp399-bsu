@@ -19,7 +19,6 @@ public class InverseKinematics : MonoBehaviour
         E = GameObject.Find("E");
         G = GameObject.Find("G");
         T = GameObject.Find("T");
-        third = Vector3.Cross(G.transform.position, T.transform.position);
         if (centralBody != null)
             offset = transform.position - centralBody.position;
     }
@@ -27,13 +26,14 @@ public class InverseKinematics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        theta = Math.Acos(Vector3.Dot(G.transform.position, T.transform.position)/(Vector3.Magnitude(G.transform.position)*Vector3.Magnitude(T.transform.position)));
-        Matrix4x4 SelfRotMat = Matrix4x4.Rotate(Quaternion.Euler(0, rotationSpeed * Time.deltaTime, 0));
+        third = Vector3.Cross(G.transform.position, T.transform.position);
+
+        theta = (180 / Math.PI) * Math.Acos(Vector3.Dot(G.transform.position, T.transform.position)/(Vector3.Magnitude(G.transform.position)*Vector3.Magnitude(T.transform.position)));
         
-        if (third.z > 0)
+        if (third.y > 0)
         {
             
-            if (currentAng <= theta){
+            if (5 < theta){
                 currentAng += rotationSpeed * Time.deltaTime;
                 Matrix4x4 rotMat = Matrix4x4.Rotate(Quaternion.Euler(0, currentAng, 0));   
             transform.position = centralBody.position + rotMat.MultiplyPoint(offset);    
@@ -42,7 +42,7 @@ public class InverseKinematics : MonoBehaviour
         }
         else
         {
-            if (currentAng >= -theta)
+            if (theta > 5)
             {
                 currentAng -= rotationSpeed * Time.deltaTime;
                 Matrix4x4 rotMat = Matrix4x4.Rotate(Quaternion.Euler(0, currentAng, 0));

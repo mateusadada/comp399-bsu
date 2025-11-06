@@ -6,9 +6,11 @@ public class InverseKinematics : MonoBehaviour
     public Transform centralBody;
     public Vector3 offset;
     public float rotationSpeed = 5f;
-    public GameObject E;
-    public GameObject G;
-    public GameObject T;
+    public GameObject Origin;
+    public GameObject P0;
+    public GameObject P1;
+    public GameObject P2;
+    public GameObject Target;
 
     public double theta = 30;
     public Vector3 third;
@@ -16,9 +18,11 @@ public class InverseKinematics : MonoBehaviour
     public float currentAng = 0;
     void Start()
     {
-        E = GameObject.Find("E");
-        G = GameObject.Find("G");
-        T = GameObject.Find("T");
+        Origin = GameObject.Find("Origin");
+        P0 = GameObject.Find("P0");
+        P1 = GameObject.Find("P1");
+        P2 = GameObject.Find("P2");
+        Target = GameObject.Find("Target");
         if (centralBody != null)
             offset = transform.position - centralBody.position;
     }
@@ -26,9 +30,9 @@ public class InverseKinematics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        third = Vector3.Cross(G.transform.position, T.transform.position);
+        third = Vector3.Cross(P0.transform.position, Target.transform.position);
 
-        theta = (180 / Math.PI) * Math.Acos(Vector3.Dot(G.transform.position, T.transform.position)/(Vector3.Magnitude(G.transform.position)*Vector3.Magnitude(T.transform.position)));
+        theta = (180 / Math.PI) * Math.Acos(Vector3.Dot(P0.transform.position, Target.transform.position)/(Vector3.Magnitude(P0.transform.position)*Vector3.Magnitude(Target.transform.position)));
         
         if (third.y > 0)
         {

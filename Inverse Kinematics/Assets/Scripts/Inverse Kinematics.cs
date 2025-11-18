@@ -12,12 +12,11 @@ public class InverseKinematics : MonoBehaviour
     public GameObject P1;
     public GameObject P2;
     public GameObject Target;
-    public double thetaR; // first angle join
-    public double thetaM; // second angle join
-    public double thetaE; // end angle join
+    public double thetaR;
+    public double thetaM;
+    public double thetaE;
     public Vector3 third;
     public Matrix4x4 rotMat;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     public float currentAng = 0;
     void Start()
     {
@@ -33,11 +32,9 @@ public class InverseKinematics : MonoBehaviour
             offset = transform.position - centralBody.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
 
-    // Outermost joint rotate, first to be called in cycle
         Matrix4x4 translateBackP1 = Matrix4x4.Translate(-P1.transform.position);
         Matrix4x4 translateForwardP1 = Matrix4x4.Translate(P1.transform.position);
 

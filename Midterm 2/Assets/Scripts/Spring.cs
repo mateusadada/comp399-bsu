@@ -1,14 +1,16 @@
+using System.IO;
 using UnityEngine;
 
 public class Spring : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private GameObject Origin;
+    private GameObject Sphere;
+
     void Start()
     {
         
-    }
+    } 
 
-    // Update is called once per frame
     void Update()
     {
         

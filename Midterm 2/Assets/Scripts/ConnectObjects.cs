@@ -1,20 +1,25 @@
 using UnityEngine;
 
-public class ConnectObjects : MonoBehaviour
+public class ConnectObjectsTriangle : MonoBehaviour
 {
-    public Transform Origin;
-    public Transform Sphere;
-    private LineRenderer Line_Renderer;
+    public Transform Origin; // ponto A
+    public Transform Cube; // ponto B
+    public Transform Sphere; // ponto C
+
+    private LineRenderer lr;
 
     void Start()
     {
-        Line_Renderer = GetComponent<LineRenderer>();
-        Line_Renderer.positionCount = 2;
+        lr = GetComponent<LineRenderer>();
+        lr.positionCount = 4; // quantidade de conexão entre os objetos
     }
 
     void Update()
     {
-        Line_Renderer.SetPosition(0, Origin.position);
-        Line_Renderer.SetPosition(1, Sphere.position);
+        // conexão entre os objetos
+        lr.SetPosition(0, Origin.position);
+        lr.SetPosition(1, Cube.position);
+        lr.SetPosition(2, Sphere.position);
+        lr.SetPosition(3, Origin.position);
     }
 }

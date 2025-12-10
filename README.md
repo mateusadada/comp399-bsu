@@ -21,11 +21,27 @@
 
 ## 🚀 Starting
 
-These exercises and final project (in developing) were developed as part of the 3D Animation course, focusing on practical modeling exercises and understanding the mathematical and physical concepts behind transformations in 3D environments. The main goal is to provide a solid foundation for understanding object movement and manipulation within the Unity game engine.
+This repository hosts the projects and exercises developed during the **3D Animation (COMP399)** course at Bridgewater State University (BSU).
+
+This course was part of my academic exchange program in the USA. The main goal was to understand the mathematics and physics behind the **Unity Physics Engine**. Through various exercises, I explored how forces, gravity, and collisions work mathematically and how to apply them practically in game development.
+
+The repository culminates in a **Final Project**, a mini-game that challenges the player to manipulate physics-based objects to achieve a specific goal.
+
+![Final Project](https://github.com/user-attachments/assets/0bd41037-614f-4c3a-90fc-66a2a48393c1)
 
 ## 📚 Features
 
-Key aspects covered during development:
+Used during the evolution of exercises and the final project:
+- Math & Physics in Unity: Deep dive into vectors, rigid bodies, colliders, and forces.
+- Physics-based Mechanics: Implementation of springs, joints, and gravity manipulation.
+- Final Project - Mini Game:
+    - Objective: The player must stack **3 boxes** on top of each other.
+    - Win Condition: The stacked boxes must cross the **red line** to win.
+    - Gameplay Mechanics:
+        - Spring Manipulation: Move the spring to position the boxes.
+        - Cut Connection: The player can cut the connection (rope/spring) to drop the box at the right moment using physics to their advantage.
+
+Key aspects covered during development of the exercises:
 - Simple 3D modeling exercises to practice object transformations.
 - Application of mathematical concepts such as vectors, matrices, and transformations.
 - Implementation of basic physical laws for object movement and interaction.
